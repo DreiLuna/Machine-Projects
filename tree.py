@@ -4,10 +4,11 @@ import random
 
 class Tree:
    
-    def __init__(self, intitial_tree_origin= (500,250), intitial_tree_radius = 75, intitial_num_leaves = 20):
+    def __init__(self, intitial_tree_origin= (500,250), intitial_tree_radius = 75, intitial_num_leaves = 20, initial_leaf_radius = 25):
         self.tree_origin = intitial_tree_origin
         self.tree_radius = intitial_tree_radius
         self.num_leaves = intitial_num_leaves
+        self.leaf_radius = initial_leaf_radius
         
     
     def getTreeLayer(self):
@@ -22,7 +23,7 @@ class Tree:
             
 
 
-            leaves.append(Circle(25+random.randint(1,3), Point(x+random.randint(-5,5),y+random.randint(-5,5))))
+            leaves.append(Circle(self.leaf_radius+random.randint(1,3), Point(x+random.randint(-5,5),y+random.randint(-5,5))))
             leaves[i].setFillColor((0,50,0))
             leaves[i].setBorderWidth(0)
             
